@@ -8,6 +8,7 @@
   ],
   "plugins": [
     "@typescript-eslint",
+    "import",
     "prettier"
   ],
   "parser": "@typescript-eslint/parser",
@@ -36,6 +37,17 @@
     "eqeqeq": "error",
     "prefer-template": "error",
     "@typescript-eslint/array-type": ["error"],
-    "@typescript-eslint/no-floating-promises": ["off"]
+    "@typescript-eslint/no-floating-promises": ["off"],
+    "import/order": [
+      "error",
+      {
+        "groups": ["builtin", "external", "internal", "parent", "sibling", "index"],
+        "alphabetize": { "order": "asc" }
+      }
+    ],
+    "import/newline-after-import": "error",
+    "import/no-default-export": "error",
+    "import/no-duplicates": "error",
+    "import/no-self-import": "error"
   }
 }
