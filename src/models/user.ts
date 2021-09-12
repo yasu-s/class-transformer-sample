@@ -4,18 +4,18 @@ export class User {
   @Expose({ name: 'uid' })
   id: number;
 
-  firstName: string;
-  lastName: string;
-  createdAt: Date;
+  firstName: string | null;
+  lastName: string | null;
+  createdAt: Date | null;
 
   @Type(() => Date)
-  birthDay: Date;
+  birthDay: Date | null;
 
   @Exclude()
-  mail: string;
+  mail: string | null;
 
   @Expose({ name: 'fullName' })
   getFullName(): string {
-    return `${this.firstName} ${this.lastName}`;
+    return `${this.firstName || ''} ${this.lastName || ''}`.trim();
   }
 }
